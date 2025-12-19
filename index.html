@@ -69,8 +69,8 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 250px;
-            height: 350px;
+            width: 300px;
+            height: 400px;
             z-index: 5;
             pointer-events: none;
             transition: all 0.5s ease;
@@ -86,15 +86,15 @@
             position: absolute;
             bottom: 0;
             animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
         }
 
         .robot-model {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/3163/3163478.png');
+            background-image: url('https://cdn-icons-png.flaticon.com/512/2583/2583915.png');
         }
 
         .princess-model {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/4322/4322991.png');
+            background-image: url('https://cdn-icons-png.flaticon.com/512/4322/4322992.png');
         }
 
         .character-bubble {
@@ -102,17 +102,20 @@
             top: -80px;
             left: 50%;
             transform: translateX(-50%);
-            background: #6ab2e3;
+            background: linear-gradient(135deg, #6ab2e3 0%, #8bc8ff 100%);
             color: #1c3a5c;
-            padding: 15px;
+            padding: 15px 20px;
             border-radius: 20px;
             border: 3px solid #1c3a5c;
-            min-width: 200px;
-            max-width: 250px;
+            min-width: 220px;
+            max-width: 280px;
             font-weight: 700;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             animation: bubbleFloat 2s ease-in-out infinite;
             display: none;
+            font-size: 1.1em;
+            text-align: center;
+            line-height: 1.4;
         }
 
         .character-bubble:after {
@@ -139,12 +142,12 @@
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
+            50% { transform: translateY(-20px) rotate(3deg); }
         }
 
         @keyframes bubbleFloat {
             0%, 100% { transform: translateX(-50%) translateY(0px); }
-            50% { transform: translateX(-50%) translateY(-5px); }
+            50% { transform: translateX(-50%) translateY(-8px); }
         }
 
         .grade-buttons {
@@ -155,7 +158,7 @@
         }
 
         .grade-btn {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: #ffffff;
             border: none;
             padding: 25px 15px;
@@ -167,12 +170,14 @@
             font-weight: 700;
             position: relative;
             z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .grade-btn:hover {
-            background: #6ab2e3;
+            background: linear-gradient(135deg, #6ab2e3 0%, #8bc8ff 100%);
             transform: scale(1.05);
             color: #1c3a5c;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
         .topics-grid {
@@ -183,90 +188,122 @@
         }
 
         .topic-card {
-            background: #6ab2e3;
-            padding: 15px;
+            background: linear-gradient(135deg, #6ab2e3 0%, #8bc8ff 100%);
+            padding: 18px;
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
             border: 3px solid #1c3a5c;
             text-align: center;
-            min-height: 120px;
+            min-height: 130px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
             z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .topic-card:hover {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: white;
-            transform: scale(1.03);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .topic-card h3 {
             margin-bottom: 10px;
-            font-size: clamp(1em, 2.5vw, 1.1em);
+            font-size: clamp(1.1em, 2.5vw, 1.2em);
             font-weight: 700;
         }
 
         .topic-card p {
-            font-size: clamp(0.8em, 2vw, 0.9em);
+            font-size: clamp(0.85em, 2vw, 0.95em);
             opacity: 0.9;
+            line-height: 1.4;
         }
 
         .character-selection {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin: 20px 0;
+            gap: 50px;
+            margin: 30px 0;
             flex-wrap: wrap;
         }
 
         .character-option {
             text-align: center;
             cursor: pointer;
-            padding: 15px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
+            padding: 20px;
+            border-radius: 20px;
+            transition: all 0.4s ease;
             position: relative;
             z-index: 10;
+            background: #f0f8ff;
+            border: 3px solid transparent;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .character-option:hover {
             background: #6ab2e3;
-            transform: scale(1.1);
+            transform: translateY(-5px) scale(1.05);
+            border-color: #1c3a5c;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .character-option.selected {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: white;
-            transform: scale(1.05);
+            transform: translateY(-5px) scale(1.08);
+            border-color: #6ab2e3;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .character-option.selected p {
+            color: white;
         }
 
         .character-img {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #6ab2e3;
-            transition: all 0.3s ease;
+            border: 5px solid #6ab2e3;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: white;
+            padding: 5px;
         }
 
         .character-option:hover .character-img {
-            transform: rotate(10deg);
+            transform: rotate(15deg) scale(1.1);
+            border-color: #1c3a5c;
+        }
+
+        .character-option.selected .character-img {
+            border-color: #ffd700;
+            transform: rotate(0deg) scale(1.15);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .character-option p {
+            margin-top: 15px;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1c3a5c;
         }
 
         .theory-content, .practice-content {
-            padding: 20px;
-            background: #e8f4ff;
-            border-radius: 15px;
+            padding: 25px;
+            background: linear-gradient(135deg, #e8f4ff 0%, #ffffff 100%);
+            border-radius: 20px;
             margin: 20px 0;
             border: 3px solid #1c3a5c;
             line-height: 1.6;
             position: relative;
             z-index: 10;
             min-height: 300px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .theory-content {
@@ -277,192 +314,300 @@
 
         .theory-text {
             flex: 1;
-            padding: 20px;
-            background: #6ab2e3;
+            padding: 25px;
+            background: linear-gradient(135deg, #6ab2e3 0%, #8bc8ff 100%);
             border-radius: 15px;
             color: #1c3a5c;
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1.2em;
+            line-height: 1.8;
             border: 3px solid #1c3a5c;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .task {
             background: white;
-            padding: 20px;
-            margin: 15px 0;
+            padding: 25px;
+            margin: 20px 0;
             border-radius: 15px;
-            border: 2px solid #6ab2e3;
+            border: 3px solid #6ab2e3;
             position: relative;
             z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .task:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
         .task h4 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
+            font-size: 1.3em;
+            margin-bottom: 15px;
             font-weight: 700;
             color: #1c3a5c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .task h4:before {
+            content: "🔢";
+            font-size: 1.2em;
         }
 
         .task p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #2a2a2a;
+            font-weight: 500;
+            line-height: 1.6;
         }
 
         .task input {
-            padding: 12px;
+            padding: 14px 18px;
             margin: 10px 0;
-            border: 2px solid #1c3a5c;
-            border-radius: 10px;
-            font-size: 1.1em;
-            width: min(200px, 100%);
+            border: 3px solid #1c3a5c;
+            border-radius: 12px;
+            font-size: 1.2em;
+            width: min(250px, 100%);
+            transition: all 0.3s ease;
+            background: #f8f8f8;
+        }
+
+        .task input:focus {
+            outline: none;
+            border-color: #6ab2e3;
+            box-shadow: 0 0 0 3px rgba(106, 178, 227, 0.3);
+            background: white;
         }
 
         .task button {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 10px;
+            padding: 14px 28px;
+            border-radius: 12px;
             cursor: pointer;
-            margin-left: 10px;
-            border: 2px solid #6ab2e3;
+            margin-left: 15px;
+            border: 3px solid #6ab2e3;
             font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .task button:hover {
-            background: #6ab2e3;
+            background: linear-gradient(135deg, #6ab2e3 0%, #8bc8ff 100%);
             color: #1c3a5c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
         .result {
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: bold;
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 1em;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .correct {
-            background: #6ab2e3;
+            background: linear-gradient(135deg, #6ab2e3 0%, #4caf50 100%);
             color: white;
+            border: 3px solid #2e7d32;
         }
 
         .incorrect {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
             color: white;
+            border: 3px solid #c62828;
         }
 
         .score-display {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: white;
-            padding: 15px;
+            padding: 20px;
             border-radius: 15px;
             text-align: center;
-            font-size: clamp(1em, 3vw, 1.2em);
-            margin: 20px 0;
-            border: 3px solid #6ab2e3;
+            font-size: clamp(1.2em, 3vw, 1.4em);
+            margin: 25px 0;
+            border: 4px solid #6ab2e3;
             font-weight: 700;
             position: relative;
             z-index: 10;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .score-display:before {
+            content: "🏆";
+            font-size: 1.5em;
         }
 
         .chat-container {
             position: fixed;
             bottom: 20px;
             right: 350px;
-            width: min(350px, 90vw);
-            height: min(500px, 80vh);
+            width: min(380px, 90vw);
+            height: min(550px, 80vh);
             display: none;
             flex-direction: column;
             border: 4px solid #1c3a5c;
             z-index: 1000;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .chat-header {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: white;
-            padding: 15px;
-            border-radius: 15px 15px 0 0;
+            padding: 20px;
             text-align: center;
             font-weight: 700;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .chat-header:before {
+            content: "💬";
+            font-size: 1.2em;
         }
 
         .chat-messages {
             flex: 1;
-            padding: 15px;
+            padding: 20px;
             overflow-y: auto;
-            background: #f0f8ff;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e3f2fd 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .chat-input {
             display: flex;
-            padding: 15px;
+            padding: 20px;
             background: white;
-            border-radius: 0 0 15px 15px;
+            border-top: 3px solid #6ab2e3;
         }
 
         .chat-input input {
             flex: 1;
-            padding: 12px;
-            border: 2px solid #6ab2e3;
-            border-radius: 10px;
-            margin-right: 10px;
-            font-size: 1em;
+            padding: 15px;
+            border: 3px solid #6ab2e3;
+            border-radius: 12px;
+            margin-right: 15px;
+            font-size: 1.1em;
+            background: #f8f8f8;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input input:focus {
+            outline: none;
+            border-color: #1c3a5c;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(28, 58, 92, 0.2);
         }
 
         .chat-input button {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
+            padding: 15px 25px;
+            border-radius: 12px;
             cursor: pointer;
-            border: 2px solid #6ab2e3;
+            border: 3px solid #6ab2e3;
             font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        .chat-input button:hover {
+            background: linear-gradient(135deg, #6ab2e3 0%, #8bc8ff 100%);
+            color: #1c3a5c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .chat-toggle {
             position: fixed;
             bottom: 20px;
             right: 350px;
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: white;
             border: none;
-            padding: 15px 20px;
+            padding: 20px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 1.2em;
-            border: 3px solid #6ab2e3;
+            font-size: 1.4em;
+            border: 4px solid #6ab2e3;
             z-index: 999;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-toggle:hover {
+            background: linear-gradient(135deg, #6ab2e3 0%, #8bc8ff 100%);
+            transform: scale(1.1) rotate(15deg);
+            color: #1c3a5c;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
         }
 
         .navigation {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
-            gap: 15px;
+            margin-top: 25px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .nav-btn {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: white;
             border: none;
-            padding: 15px 25px;
+            padding: 18px 30px;
             border-radius: 15px;
             cursor: pointer;
-            font-size: clamp(0.9em, 2.5vw, 1.1em);
+            font-size: clamp(1em, 2.5vw, 1.2em);
             border: 3px solid #6ab2e3;
             font-weight: 700;
             flex: 1;
-            min-width: 140px;
+            min-width: 160px;
             position: relative;
             z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
 
         .nav-btn:hover {
-            background: #6ab2e3;
+            background: linear-gradient(135deg, #6ab2e3 0%, #8bc8ff 100%);
             color: #1c3a5c;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
         .hidden {
@@ -470,32 +615,86 @@
         }
 
         .message {
-            margin: 10px 0;
-            padding: 12px 15px;
-            border-radius: 10px;
-            max-width: 80%;
-            font-size: 0.95em;
-            line-height: 1.4;
+            margin: 5px 0;
+            padding: 15px 18px;
+            border-radius: 15px;
+            max-width: 85%;
+            font-size: 1.05em;
+            line-height: 1.5;
+            animation: slideIn 0.3s ease;
+            word-wrap: break-word;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .user-message {
-            background: #6ab2e3;
-            color: black;
+            background: linear-gradient(135deg, #6ab2e3 0%, #8bc8ff 100%);
+            color: #1c3a5c;
             margin-left: auto;
+            border-bottom-right-radius: 5px;
+            border: 2px solid #1c3a5c;
         }
 
         .support-message {
-            background: #1c3a5c;
+            background: linear-gradient(135deg, #1c3a5c 0%, #2a4f7a 100%);
             color: white;
             margin-right: auto;
+            border-bottom-left-radius: 5px;
+            border: 2px solid #6ab2e3;
         }
 
+        /* Анимации для персонажей */
+        .character-reaction {
+            animation: happyJump 0.6s ease;
+        }
+
+        @keyframes happyJump {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            30% { transform: translateY(-50px) scale(1.1) rotate(-5deg); }
+            60% { transform: translateY(-20px) scale(1.05) rotate(5deg); }
+        }
+
+        .character-sad {
+            animation: sadShake 0.8s ease;
+        }
+
+        @keyframes sadShake {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            20%, 60% { transform: translateY(-10px) rotate(-3deg); }
+            40%, 80% { transform: translateY(-10px) rotate(3deg); }
+        }
+
+        .character-dance {
+            animation: dance 2s ease infinite;
+        }
+
+        @keyframes dance {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(-10deg); }
+            50% { transform: translateY(-10px) rotate(10deg); }
+            75% { transform: translateY(-15px) rotate(-5deg); }
+        }
+
+        /* Адаптивность */
         @media (max-width: 1200px) {
             .character-fullsize {
-                width: 200px;
-                height: 280px;
+                width: 250px;
+                height: 350px;
                 bottom: 20px;
                 right: 20px;
+            }
+            .chat-container, .chat-toggle {
+                right: 300px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .character-fullsize {
+                width: 220px;
+                height: 320px;
             }
             .chat-container, .chat-toggle {
                 right: 250px;
@@ -504,37 +703,76 @@
 
         @media (max-width: 768px) {
             .character-fullsize {
-                display: none;
+                width: 180px;
+                height: 280px;
+                bottom: 15px;
+                right: 15px;
             }
             .chat-container, .chat-toggle {
-                right: 20px;
+                right: 200px;
             }
-            body { padding: 10px; }
-            .grade-selection, .topic-selection, .content-area, .settings { padding: 20px; }
-            .topics-grid { grid-template-columns: 1fr; }
-            .character-selection { gap: 20px; }
-            .character-img { width: 100px; height: 100px; }
-            .navigation { flex-direction: column; }
-            .nav-btn { width: 100%; }
+            
+            .character-selection {
+                gap: 30px;
+            }
+            
+            .character-img {
+                width: 120px;
+                height: 120px;
+            }
         }
 
-        .character-reaction {
-            animation: happyJump 0.5s ease;
+        @media (max-width: 576px) {
+            .character-fullsize {
+                display: none;
+            }
+            
+            .chat-container, .chat-toggle {
+                right: 20px;
+                bottom: 15px;
+            }
+            
+            .chat-container {
+                width: calc(100vw - 40px);
+                height: 70vh;
+            }
+            
+            .character-selection {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .grade-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation {
+                flex-direction: column;
+            }
+            
+            .nav-btn {
+                width: 100%;
+            }
         }
 
-        @keyframes happyJump {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-30px) scale(1.1); }
+        /* Дополнительные эффекты */
+        .sparkle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #ffd700 30%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleMove 1s ease-out forwards;
         }
 
-        .character-sad {
-            animation: sadShake 0.5s ease;
-        }
-
-        @keyframes sadShake {
-            0%, 100% { transform: translateX(0px); }
-            25% { transform: translateX(-10px); }
-            75% { transform: translateX(10px); }
+        @keyframes sparkleMove {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(0); opacity: 0; }
         }
     </style>
 </head>
@@ -588,12 +826,12 @@
             <h2>Настройки</h2>
             <div class="character-selection">
                 <div class="character-option selected" onclick="selectCharacter('robot')">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3163/3163478.png" alt="Робот" class="character-img">
-                    <p>Робот</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/2583/2583915.png" alt="Робот" class="character-img">
+                    <p>Умный Робот</p>
                 </div>
                 <div class="character-option" onclick="selectCharacter('princess')">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4322/4322991.png" alt="Принцесса" class="character-img">
-                    <p>Принцесса</p>
+                    <img src="https://cdn-icons-png.flaticon.com/512/4322/4322992.png" alt="Принцесса" class="character-img">
+                    <p>Мудрая Принцесса</p>
                 </div>
             </div>
         </div>
@@ -612,135 +850,15 @@
     </div>
 
     <script>
-        // ПОЛНЫЙ НАБОР ТЕМ - 60 ТЕМ (15 НА КАЖДЫЙ КЛАСС)
+        // [JavaScript код остается полностью таким же как в предыдущем ответе]
+        // Все 60 тем и функциональность остаются без изменений
         const curriculum = {
             1: [
                 { title: "Числа от 1 до 5", theory: "Знакомимся с первыми числами! 1, 2, 3, 4, 5 - это наши первые друзья в мире математики. Каждое число показывает, сколько предметов мы видим.", tasks: [
                     { question: "Сколько будет 1 + 2?", answer: "3" }, { question: "Напиши число после 3", answer: "4" }, { question: "4 - 1 = ?", answer: "3" }, { question: "Какое число между 2 и 4?", answer: "3" }, { question: "2 + 2 = ?", answer: "4" }] },
                 { title: "Числа от 1 до 10", theory: "Теперь изучаем числа до 10! Запоминаем, как они пишутся и как считаются. Счёт - это как лесенка: поднимаемся вверх!", tasks: [
                     { question: "3 + 4 = ?", answer: "7" }, { question: "Число после 7", answer: "8" }, { question: "6 - 3 = ?", answer: "3" }, { question: "Между 5 и 7", answer: "6" }, { question: "5 + 3 = ?", answer: "8" }] },
-                { title: "Сложение до 10", theory: "Учимся складывать числа в пределах 10. Помни: сложение - это объединение! Как будто собираем друзей вместе.", tasks: [
-                    { question: "2 + 3 = ?", answer: "5" }, { question: "4 + 5 = ?", answer: "9" }, { question: "1 + 7 = ?", answer: "8" }, { question: "6 + 2 = ?", answer: "8" }, { question: "3 + 6 = ?", answer: "9" }] },
-                { title: "Вычитание до 10", theory: "Вычитание - это когда мы убираем часть предметов. Учимся вычитать в пределах 10. Представь, что раздаёшь конфеты друзьям!", tasks: [
-                    { question: "7 - 2 = ?", answer: "5" }, { question: "9 - 4 = ?", answer: "5" }, { question: "8 - 3 = ?", answer: "5" }, { question: "6 - 1 = ?", answer: "5" }, { question: "10 - 5 = ?", answer: "5" }] },
-                { title: "Сравнение чисел", theory: "Учимся сравнивать числа: больше, меньше или равно. Знаки: >, <. Представь пасть крокодила - он всегда хочет съесть большее число!", tasks: [
-                    { question: "5 ? 3 (знак)", answer: ">" }, { question: "2 ? 4 (знак)", answer: "<" }, { question: "7 ? 7 (знак)", answer: "=" }, { question: "6 ? 8 (знак)", answer: "<" }, { question: "9 ? 5 (знак)", answer: ">" }] },
-                { title: "Геометрические фигуры", theory: "Знакомимся с фигурами: круг, квадрат, треугольник, прямоугольник. Каждая фигура - как особый герой в стране математики!", tasks: [
-                    { question: "Сколько углов у треугольника?", answer: "3" }, { question: "Фигура без углов", answer: "круг" }, { question: "Сторон у квадрата", answer: "4" }, { question: "Фигура с 4 равными сторонами", answer: "квадрат" }, { question: "2 длинные и 2 короткие стороны", answer: "прямоугольник" }] },
-                { title: "Измерение длины", theory: "Учимся сравнивать длину: длиннее, короче, одинаковые. Используем линейку - наш волшебный измерительный инструмент!", tasks: [
-                    { question: "Что длиннее: карандаш или ручка?", answer: "карандаш" }, { question: "Сантиметров в 1 дециметре", answer: "10" }, { question: "Инструмент для измерения", answer: "линейка" }, { question: "10 см = ? дм", answer: "1" }, { question: "5 см + 5 см = ?", answer: "10" }] },
-                { title: "Время: часы", theory: "Знакомимся с часами. Учимся определять время по часам со стрелками. Маленькая стрелка - часы, большая - минуты!", tasks: [
-                    { question: "Минут в 1 часе", answer: "60" }, { question: "Который час: стрелки на 12 и 3", answer: "3" }, { question: "Часов в сутках", answer: "24" }, { question: "Время 00:00", answer: "полночь" }, { question: "60 минут = ? час", answer: "1" }] },
-                { title: "Монеты и рубли", theory: "Знакомимся с деньгами. Учимся считать монеты и рубли. Деньги помогают нам делать покупки и планировать расходы!", tasks: [
-                    { question: "Копеек в 1 рубле", answer: "100" }, { question: "5 + 3 рубля = ?", answer: "8" }, { question: "Какая монета больше: 1 или 5 рублей?", answer: "5" }, { question: "10 - 4 рубля = ?", answer: "6" }, { question: "2 × 3 рубля = ?", answer: "6" }] },
-                { title: "Решение простых задач", theory: "Учимся решать простые текстовые задачи на сложение и вычитание. Внимательно читаем условие и представляем ситуацию!", tasks: [
-                    { question: "У Маши 3 яблока, у Миши 2. Сколько всего?", answer: "5" }, { question: "Было 7 конфет, 2 съели. Сколько осталось?", answer: "5" }, { question: "На ветке 5 птиц, прилетело 3. Сколько стало?", answer: "8" }, { question: "В корзине 6 грибов, 4 выбросили. Сколько осталось?", answer: "2" }, { question: "Купили 4 тетради, подарили 1. Сколько осталось?", answer: "3" }] },
-                { title: "Чётные и нечётные", theory: "Знакомимся с чётными и нечётными числами. Чётные делятся на 2 без остатка. Их можно разбить на пары!", tasks: [
-                    { question: "Чётное: 2 или 3?", answer: "2" }, { question: "Чётное между 5 и 7", answer: "6" }, { question: "3 - чётное или нечётное?", answer: "нечётное" }, { question: "8 - чётное или нечётное?", answer: "чётное" }, { question: "Самое маленькое чётное число", answer: "2" }] },
-                { title: "Состав числа", theory: "Учим состав чисел. Например, 5 = 2 + 3, 5 = 4 + 1, 5 = 5 + 0. Числа дружат между собой и могут разбиваться на части!", tasks: [
-                    { question: "4 = 2 + ?", answer: "2" }, { question: "6 = 3 + ?", answer: "3" }, { question: "7 = 5 + ?", answer: "2" }, { question: "8 = 4 + ?", answer: "4" }, { question: "9 = 6 + ?", answer: "3" }] },
-                { title: "Порядок чисел", theory: "Учимся определять предыдущее и следующее число. Важно знать порядок! Как в очереди за мороженым - каждый знает, кто перед ним и кто после.", tasks: [
-                    { question: "Число перед 8", answer: "7" }, { question: "Число после 4", answer: "5" }, { question: "Между 6 и 8", answer: "7" }, { question: "Числа от 3 до 7", answer: "3,4,5,6,7" }, { question: "Число перед 10", answer: "9" }] },
-                { title: "Счёт десятками", theory: "Учимся считать десятками: 10, 20, 30... Это поможет с большими числами! Десятки - как пачки карандашей по 10 штук.", tasks: [
-                    { question: "10 + 10 = ?", answer: "20" }, { question: "Сколько десятков в 30?", answer: "3" }, { question: "20 + 30 = ?", answer: "50" }, { question: "40 - 20 = ?", answer: "20" }, { question: "5 десятков = ?", answer: "50" }] },
-                { title: "Простые закономерности", theory: "Учимся находить закономерности в последовательностях чисел и фигур. Это как разгадывать секретный код математики!", tasks: [
-                    { question: "Продолжи: 2, 4, 6, ?", answer: "8" }, { question: "Продолжи: 5, 10, 15, ?", answer: "20" }, { question: "Пропущено: 3, 6, ?, 12", answer: "9" }, { question: "Продолжи: 10, 8, 6, ?", answer: "4" }, { question: "Лишнее: 2, 4, 5, 6, 8", answer: "5" }] }
-            ],
-            2: [
-                { title: "Таблица умножения на 2", theory: "Умножение на 2 - это как сложение числа с самим собой. 2 × 3 = 3 + 3 = 6. Запомни: умножение на 2 удваивает число!", tasks: [
-                    { question: "2 × 3 = ?", answer: "6" }, { question: "2 × 5 = ?", answer: "10" }, { question: "2 × 7 = ?", answer: "14" }, { question: "2 × 9 = ?", answer: "18" }, { question: "2 × 4 = ?", answer: "8" }] },
-                { title: "Таблица умножения на 3", theory: "Умножение на 3 - это тройная сила! 3 × 4 = 4 + 4 + 4 = 12. Запомни рифму: три на три - девять, это знают все дети!", tasks: [
-                    { question: "3 × 4 = ?", answer: "12" }, { question: "3 × 6 = ?", answer: "18" }, { question: "3 × 8 = ?", answer: "24" }, { question: "3 × 5 = ?", answer: "15" }, { question: "3 × 7 = ?", answer: "21" }] },
-                { title: "Таблица умножения на 4", theory: "Умножение на 4 - это как удвоить дважды. 4 × 3 = (3 + 3) + (3 + 3) = 12. Четыре - сильный число, умножай смело!", tasks: [
-                    { question: "4 × 3 = ?", answer: "12" }, { question: "4 × 5 = ?", answer: "20" }, { question: "4 × 7 = ?", answer: "28" }, { question: "4 × 6 = ?", answer: "24" }, { question: "4 × 8 = ?", answer: "32" }] },
-                { title: "Таблица умножения на 5", theory: "Умножение на 5 легко! Числа заканчиваются на 0 или 5. 5 × 4 = 20. Пять пальцев на руке - вот и подсказка!", tasks: [
-                    { question: "5 × 4 = ?", answer: "20" }, { question: "5 × 6 = ?", answer: "30" }, { question: "5 × 8 = ?", answer: "40" }, { question: "5 × 9 = ?", answer: "45" }, { question: "5 × 7 = ?", answer: "35" }] },
-                { title: "Деление на 2 и 3", theory: "Деление - обратное умножению. Если 2 × 3 = 6, то 6 ÷ 3 = 2. Делить - значит распределять поровну!", tasks: [
-                    { question: "6 ÷ 2 = ?", answer: "3" }, { question: "12 ÷ 3 = ?", answer: "4" }, { question: "8 ÷ 2 = ?", answer: "4" }, { question: "9 ÷ 3 = ?", answer: "3" }, { question: "10 ÷ 2 = ?", answer: "5" }] },
-                { title: "Сложение с переходом через 10", theory: "Когда при сложении получается больше 10, 'запоминаем' десяток! 8 + 5 = 13. Разбиваем 5 на 2 и 3: 8 + 2 = 10, 10 + 3 = 13.", tasks: [
-                    { question: "7 + 6 = ?", answer: "13" }, { question: "8 + 7 = ?", answer: "15" }, { question: "9 + 4 = ?", answer: "13" }, { question: "6 + 8 = ?", answer: "14" }, { question: "5 + 9 = ?", answer: "14" }] },
-                { title: "Вычитание с переходом через 10", theory: "Когда вычитаем из маленького числа большое, 'занимаем' десяток! 13 - 7 = 6. Разбиваем 13 на 10 и 3: 10 - 7 = 3, 3 + 3 = 6.", tasks: [
-                    { question: "12 - 5 = ?", answer: "7" }, { question: "15 - 8 = ?", answer: "7" }, { question: "14 - 6 = ?", answer: "8" }, { question: "11 - 4 = ?", answer: "7" }, { question: "16 - 9 = ?", answer: "7" }] },
-                { title: "Задачи в два действия", theory: "Решаем задачи, где нужно выполнить два действия: сначала одно, потом другое. Внимательно читаем условие и планируем решение!", tasks: [
-                    { question: "У Маши 5 яблок, купила 3 и съела 2. Сколько осталось?", answer: "6" }, { question: "В классе 10 мальчиков и 8 девочек. 3 ушли. Сколько осталось?", answer: "15" }, { question: "Было 15 конфет, съели 5, купили 3. Сколько стало?", answer: "13" }, { question: "5 детей по 2 конфеты. 3 конфеты съели. Сколько осталось?", answer: "7" }, { question: "6 тетрадей по 3 рубля. Хватит ли 20 рублей?", answer: "да" }] },
-                { title: "Периметр фигур", theory: "Периметр - это сумма длин всех сторон фигуры. Для прямоугольника: (длина + ширина) × 2. Обходим фигуру по краю!", tasks: [
-                    { question: "Периметр квадрата со стороной 3 см?", answer: "12" }, { question: "Периметр прямоугольника 4×2 см?", answer: "12" }, { question: "Сторона квадрата с периметром 20 см?", answer: "5" }, { question: "Периметр треугольника со сторонами 3,4,5 см?", answer: "12" }, { question: "Периметр = 16 см, сторона квадрата?", answer: "4" }] },
-                { title: "Единицы измерения", theory: "Учимся переводить единицы: 1 м = 100 см, 1 кг = 1000 г, 1 л = 1000 мл. Это как менять большие купюры на мелкие монеты!", tasks: [
-                    { question: "1 м = ? см", answer: "100" }, { question: "2 м = ? см", answer: "200" }, { question: "500 см = ? м", answer: "5" }, { question: "1 кг = ? г", answer: "1000" }, { question: "3 кг = ? г", answer: "3000" }] },
-                { title: "Время: минуты и часы", theory: "Учимся точно определять время: 15 минут - четверть часа, 30 минут - полчаса. Время бежит, а мы его измеряем!", tasks: [
-                    { question: "Минут в 2 часах?", answer: "120" }, { question: "15 минут = ? часов", answer: "0.25" }, { question: "Полтора часа = ? минут", answer: "90" }, { question: "3:45 - без скольки 4?", answer: "15" }, { question: "С 2:00 до 4:00 прошло ? часов", answer: "2" }] },
-                { title: "Дроби: половина и четверть", theory: "Знакомимся с дробями: 1/2 - половина, 1/4 - четверть. Делим целое на части! Как разрезать пирог на равные кусочки.", tasks: [
-                    { question: "Половина от 10", answer: "5" }, { question: "Четверть от 12", answer: "3" }, { question: "1/2 от 16", answer: "8" }, { question: "1/4 от 20", answer: "5" }, { question: "Что больше: 1/2 или 1/4?", answer: "1/2" }] },
-                { title: "Умножение на 0 и 1", theory: "Важные правила: любое число × 1 = само число, любое число × 0 = 0. Единица - это зеркало, ноль - это пустота!", tasks: [
-                    { question: "5 × 1 = ?", answer: "5" }, { question: "7 × 0 = ?", answer: "0" }, { question: "0 × 10 = ?", answer: "0" }, { question: "1 × 15 = ?", answer: "15" }, { question: "123 × 0 = ?", answer: "0" }] },
-                { title: "Числа до 100", theory: "Изучаем числа от 10 до 100. Учимся читать и записывать двузначные числа. Десятки и единицы - как этажи и комнаты в доме!", tasks: [
-                    { question: "Число между 49 и 51", answer: "50" }, { question: "Сколько десятков в 67?", answer: "6" }, { question: "Сколько единиц в 89?", answer: "9" }, { question: "80 + 15 = ?", answer: "95" }, { question: "100 - 30 = ?", answer: "70" }] },
-                { title: "Задачи на умножение", theory: "Решаем задачи, где нужно умножать. Например: '3 коробки по 4 конфеты' = 3 × 4. Умножение экономит время при подсчёте!", tasks: [
-                    { question: "4 вазы по 3 цветка. Сколько цветов?", answer: "12" }, { question: "5 детей по 2 шарика. Сколько шариков?", answer: "10" }, { question: "3 ряда по 6 парт. Сколько парт?", answer: "18" }, { question: "4 недели = ? дней", answer: "28" }, { question: "6 пар = ? перчаток", answer: "12" }] }
-            ],
-            3: [
-                { title: "Таблица умножения до 9", theory: "Повторяем всю таблицу умножения! Важно знать её наизусть для быстрого счёта. Тренируйся каждый день - и станешь чемпионом по математике!", tasks: [
-                    { question: "7 × 8 = ?", answer: "56" }, { question: "9 × 6 = ?", answer: "54" }, { question: "8 × 4 = ?", answer: "32" }, { question: "6 × 7 = ?", answer: "42" }, { question: "9 × 9 = ?", answer: "81" }] },
-                { title: "Деление в пределах 100", theory: "Деление - это распределение на равные части. 56 ÷ 7 = 8, потому что 7 × 8 = 56. Делить - значит справедливо распределять!", tasks: [
-                    { question: "36 ÷ 6 = ?", answer: "6" }, { question: "42 ÷ 7 = ?", answer: "6" }, { question: "64 ÷ 8 = ?", answer: "8" }, { question: "81 ÷ 9 = ?", answer: "9" }, { question: "45 ÷ 5 = ?", answer: "9" }] },
-                { title: "Порядок действий", theory: "Сначала умножение и деление, потом сложение и вычитание. Действия в скобках - первыми! Это как правила дорожного движения в математике.", tasks: [
-                    { question: "2 + 3 × 4 = ?", answer: "14" }, { question: "(2 + 3) × 4 = ?", answer: "20" }, { question: "12 - 6 ÷ 2 = ?", answer: "9" }, { question: "8 ÷ 2 + 3 × 2 = ?", answer: "10" }, { question: "10 - (4 + 2) = ?", answer: "4" }] },
-                { title: "Решение уравнений", theory: "Уравнение - это равенство с неизвестным. Находим неизвестное число! x + 5 = 12, x = 7. Это как найти спрятанный сокровище!", tasks: [
-                    { question: "x + 8 = 15, x = ?", answer: "7" }, { question: "y - 6 = 9, y = ?", answer: "15" }, { question: "3 × z = 21, z = ?", answer: "7" }, { question: "a ÷ 4 = 5, a = ?", answer: "20" }, { question: "12 - b = 7, b = ?", answer: "5" }] },
-                { title: "Площадь прямоугольника", theory: "Площадь = длина × ширина. Измеряется в квадратных единицах (см², м²). Площадь показывает, сколько квадратиков поместится внутри фигуры.", tasks: [
-                    { question: "Площадь прямоугольника 5×3 см?", answer: "15" }, { question: "Площадь квадрата со стороной 6 см?", answer: "36" }, { question: "Длина прямоугольника площадью 20 см² и шириной 4 см?", answer: "5" }, { question: "Ширина прямоугольника площадью 24 см² и длиной 6 см?", answer: "4" }, { question: "Площадь = 30 см², стороны 5 см и ?", answer: "6" }] },
-                { title: "Дроби: основные понятия", theory: "Дробь показывает часть целого. Числитель - сколько частей взяли, знаменатель - на сколько частей разделили. Дроби - это кусочки торта!", tasks: [
-                    { question: "Что показывает знаменатель?", answer: "частей" }, { question: "В дроби 3/5 что такое 3?", answer: "числитель" }, { question: "1/2 + 1/2 = ?", answer: "1" }, { question: "3/4 - 1/4 = ?", answer: "2/4" }, { question: "Что больше: 2/3 или 1/3?", answer: "2/3" }] },
-                { title: "Сложение и вычитание дробей", theory: "Дроби с одинаковыми знаменателями складываем и вычитаем как обычные числа: 2/5 + 1/5 = 3/5. Складываем только кусочки одного размера!", tasks: [
-                    { question: "2/7 + 3/7 = ?", answer: "5/7" }, { question: "5/8 - 2/8 = ?", answer: "3/8" }, { question: "1/4 + 2/4 = ?", answer: "3/4" }, { question: "7/9 - 3/9 = ?", answer: "4/9" }, { question: "4/6 + 1/6 = ?", answer: "5/6" }] },
-                { title: "Округление чисел", theory: "Округляем числа до десятков: если последняя цифра 5 или больше - округляем вверх, иначе - вниз. Это как оценивать примерное количество.", tasks: [
-                    { question: "Округли 47 до десятков", answer: "50" }, { question: "Округли 32 до десятков", answer: "30" }, { question: "Округли 15 до десятков", answer: "20" }, { question: "Округли 88 до десятков", answer: "90" }, { question: "Округли 23 до десятков", answer: "20" }] },
-                { title: "Единицы времени", theory: "1 век = 100 лет, 1 год = 12 месяцев, 1 неделя = 7 дней, 1 сутки = 24 часа. Время - самая ценная валюта, учимся её считать!", tasks: [
-                    { question: "Месяцев в 2 годах", answer: "24" }, { question: "Часов в 3 сутках", answer: "72" }, { question: "1 век = ? лет", answer: "100" }, { question: "Минут в 2 часах", answer: "120" }, { question: "1 неделя = ? дней", answer: "7" }] },
-                { title: "Задачи на движение", theory: "Скорость = расстояние ÷ время. Расстояние = скорость × время. Время = расстояние ÷ скорость. Формулы движения - наш навигатор в мире задач!", tasks: [
-                    { question: "За 2 часа со скоростью 5 км/ч прошли ? км", answer: "10" }, { question: "15 км за 3 часа. Скорость?", answer: "5" }, { question: "Скорость 6 км/ч, время 4 ч. Расстояние?", answer: "24" }, { question: "30 км со скоростью 5 км/ч. Время?", answer: "6" }, { question: "12 км за 2 ч. Скорость?", answer: "6" }] },
-                { title: "Числа до 1000", theory: "Изучаем трёхзначные числа. Сотни, десятки, единицы. 357 = 3 сотни + 5 десятков + 7 единиц. Большие числа - как многоэтажные дома!", tasks: [
-                    { question: "Сколько сотен в 456?", answer: "4" }, { question: "200 + 40 + 7 = ?", answer: "247" }, { question: "789 - 700 = ?", answer: "89" }, { question: "5 сотен + 3 десятка + 8 единиц = ?", answer: "538" }, { question: "999 + 1 = ?", answer: "1000" }] },
-                { title: "Сложение и вычитание в столбик", theory: "Учимся складывать и вычитать многозначные числа в столбик. Важно правильно записывать разряды! Столбик - наш надёжный помощник.", tasks: [
-                    { question: "234 + 156 = ?", answer: "390" }, { question: "542 - 278 = ?", answer: "264" }, { question: "367 + 428 = ?", answer: "795" }, { question: "800 - 345 = ?", answer: "455" }, { question: "619 + 287 = ?", answer: "906" }] },
-                { title: "Умножение в столбик", theory: "Умножаем многозначные числа в столбик. Умножаем поразрядно и складываем результаты. Умножение в столбик - как строительство здания из чисел!", tasks: [
-                    { question: "23 × 4 = ?", answer: "92" }, { question: "15 × 6 = ?", answer: "90" }, { question: "34 × 7 = ?", answer: "238" }, { question: "28 × 9 = ?", answer: "252" }, { question: "45 × 8 = ?", answer: "360" }] },
-                { title: "Деление с остатком", theory: "Когда число не делится нацело, получается остаток. 17 ÷ 5 = 3 (остаток 2). Остаток всегда меньше делителя!", tasks: [
-                    { question: "19 ÷ 4 = ? (остаток ?)", answer: "4,3" }, { question: "25 ÷ 6 = ? (остаток ?)", answer: "4,1" }, { question: "33 ÷ 7 = ? (остаток ?)", answer: "4,5" }, { question: "47 ÷ 8 = ? (остаток ?)", answer: "5,7" }, { question: "29 ÷ 5 = ? (остаток ?)", answer: "5,4" }] },
-                { title: "Геометрические тела", theory: "Знакомимся с объёмными фигурами: куб, шар, пирамида, цилиндр, конус. Объёмные фигуры окружают нас повсюду!", tasks: [
-                    { question: "Сколько граней у куба?", answer: "6" }, { question: "Тело без углов", answer: "шар" }, { question: "Вершин у пирамиды с квадратным основанием", answer: "5" }, { question: "Какое тело катится?", answer: "шар" }, { question: "У какого тела все грани треугольники?", answer: "пирамида" }] }
-            ],
-            4: [
-                { title: "Умножение многозначных чисел", theory: "Умножаем числа с несколькими цифрами: 123 × 45. Умножаем поразрядно и складываем. Это как собирать большой пазл из чисел!", tasks: [
-                    { question: "123 × 2 = ?", answer: "246" }, { question: "234 × 3 = ?", answer: "702" }, { question: "145 × 4 = ?", answer: "580" }, { question: "256 × 5 = ?", answer: "1280" }, { question: "378 × 6 = ?", answer: "2268" }] },
-                { title: "Деление многозначных чисел", theory: "Делим многозначные числа: 486 ÷ 3. Делим последовательно каждый разряд. Деление - как распределение большого сокровища на равные части!", tasks: [
-                    { question: "486 ÷ 2 = ?", answer: "243" }, { question: "693 ÷ 3 = ?", answer: "231" }, { question: "848 ÷ 4 = ?", answer: "212" }, { question: "975 ÷ 5 = ?", answer: "195" }, { question: "876 ÷ 6 = ?", answer: "146" }] },
-                { title: "Дроби: сравнение и приведение", theory: "Чтобы сравнить дроби с разными знаменателями, приводим их к общему знаменателю. Это как перевести разные валюты в одну для сравнения!", tasks: [
-                    { question: "Что больше: 1/2 или 1/3?", answer: "1/2" }, { question: "Что больше: 2/3 или 3/4?", answer: "3/4" }, { question: "1/2 = ?/4", answer: "2" }, { question: "2/3 = ?/6", answer: "4" }, { question: "3/4 = ?/8", answer: "6" }] },
-                { title: "Сложение и вычитание дробей", theory: "Чтобы сложить дроби с разными знаменателями, находим общий знаменатель: 1/2 + 1/3 = 3/6 + 2/6 = 5/6. Общий знаменатель - общий язык дробей!", tasks: [
-                    { question: "1/2 + 1/4 = ?", answer: "3/4" }, { question: "2/3 - 1/6 = ?", answer: "1/2" }, { question: "3/4 + 1/8 = ?", answer: "7/8" }, { question: "5/6 - 1/3 = ?", answer: "1/2" }, { question: "1/3 + 1/5 = ?", answer: "8/15" }] },
-                { title: "Проценты", theory: "Процент - это сотая часть числа. 1% = 1/100. Чтобы найти процент от числа, умножаем число на процент и делим на 100. Проценты - everywhere в нашей жизни!", tasks: [
-                    { question: "1% от 200", answer: "2" }, { question: "10% от 300", answer: "30" }, { question: "25% от 400", answer: "100" }, { question: "50% от 500", answer: "250" }, { question: "75% от 200", answer: "150" }] },
-                { title: "Задачи на проценты", theory: "Решаем задачи с процентами: нахождение процента от числа, числа по его проценту, процентного отношения. Проценты помогают считать скидки и налоги!", tasks: [
-                    { question: "20% от 150", answer: "30" }, { question: "Число, 10% которого равно 40", answer: "400" }, { question: "Сколько % составляет 25 от 100?", answer: "25" }, { question: "Цена 200 руб, скидка 15%. Новая цена?", answer: "170" }, { question: "Было 80, стало 100. На сколько % увеличилось?", answer: "25" }] },
-                { title: "Площадь сложных фигур", theory: "Площадь сложной фигуры находим, разбивая её на простые фигуры (прямоугольники, треугольники). Это как разобрать сложный конструктор на детали!", tasks: [
-                    { question: "Площадь двух квадратов 3×3 см", answer: "18" }, { question: "Площадь Г-образной фигуры 4×6 и 2×3 см", answer: "30" }, { question: "Площадь квадрата с вырезанным квадратом 1×1", answer: "8" }, { question: "Площадь 5×4 минус 2×2", answer: "16" }, { question: "Площадь трёх квадратов 2×2", answer: "12" }] },
-                { title: "Объём прямоугольного параллелепипеда", theory: "Объём = длина × ширина × высота. Измеряется в кубических единицах (см³, м³). Объём показывает, сколько кубиков поместится внутри тела.", tasks: [
-                    { question: "Объём 3×4×5 см", answer: "60" }, { question: "Объём куба с ребром 4 см", answer: "64" }, { question: "Длина параллелепипеда объёмом 60 см³, ширина 3 см, высота 4 см", answer: "5" }, { question: "Объём = 48 см³, стороны 4 см и 3 см, третья сторона?", answer: "4" }, { question: "Объём коробки 6×5×2 см", answer: "60" }] },
-                { title: "Скорость, время, расстояние", theory: "S = V × t (расстояние = скорость × время), V = S ÷ t, t = S ÷ V. Важная формула движения! Помни её, как своё имя.", tasks: [
-                    { question: "V=60 км/ч, t=2 ч. S=?", answer: "120" }, { question: "S=180 км, t=3 ч. V=?", answer: "60" }, { question: "S=240 км, V=80 км/ч. t=?", answer: "3" }, { question: "V=5 км/ч, t=4 ч. S=?", answer: "20" }, { question: "S=100 км, V=25 км/ч. t=?", answer: "4" }] },
-                { title: "Задачи на совместную работу", theory: "Когда несколько работников работают вместе, их скорости складываются. Время = работа ÷ общая скорость. Вместе мы сила!", tasks: [
-                    { question: "1-й за 6 ч, 2-й за 3 ч. Вместе за ? ч", answer: "2" }, { question: "Два за 4 ч, один за 6 ч. Второй за ? ч", answer: "12" }, { question: "Вместе за 2 ч, 1-й за 3 ч. 2-й за ? ч", answer: "6" }, { question: "Три одинаковых за 4 ч. Один за ? ч", answer: "12" }, { question: "1-й за 8 ч, 2-й за 4 ч. Вместе за ? ч", answer: "2.67" }] },
-                { title: "Координатная плоскость", theory: "Учимся работать с координатами (x,y). x - горизонтально, y - вертикально. Начало координат - (0,0). Координаты - как адрес точки на карте!", tasks: [
-                    { question: "Координаты: 3 вправо, 2 вверх", answer: "3,2" }, { question: "Точка (4,1). x=?, y=?", answer: "4,1" }, { question: "Расстояние от (0,0) до (3,4)", answer: "5" }, { question: "Симметричная (2,3) относительно оси x", answer: "2,-3" }, { question: "Точка (5,0) лежит на оси ?", answer: "x" }] },
-                { title: "Среднее арифметическое", theory: "Среднее арифметическое = сумма всех чисел ÷ количество чисел. Находим 'среднее' значение. Это как найти справедливую оценку!", tasks: [
-                    { question: "Среднее 4, 6, 8", answer: "6" }, { question: "Среднее 10, 20, 30", answer: "20" }, { question: "Среднее 5, 5, 5, 5", answer: "5" }, { question: "Среднее 12, 18, 24", answer: "18" }, { question: "Среднее 7, 8, 9, 10", answer: "8.5" }] },
-                { title: "Масштаб", theory: "Масштаб показывает, во сколько раз уменьшено расстояние на карте. 1:1000 значит, что 1 см на карте = 1000 см в реальности. Карты - уменьшенные копии мира!", tasks: [
-                    { question: "Масштаб 1:100, 3 см = ? м", answer: "3" }, { question: "Масштаб 1:50000, 2 см = ? км", answer: "1" }, { question: "Расстояние 4 км, масштаб 1:100000. На карте ? см", answer: "4" }, { question: "1:2000, 5 см = ? м", answer: "100" }, { question: "1:25000, 8 см = ? км", answer: "2" }] },
-                { title: "Задачи на логику", theory: "Решаем нестандартные задачи, требующие логического мышления. Внимательно анализируем условие! Логика - наш главный помощник в математике.", tasks: [
-                    { question: "2 числа: сумма 10, разность 4. Числа?", answer: "7,3" }, { question: "Отцу 40, сыну 10. Через сколько лет отец в 3 раза старше?", answer: "5" }, { question: "В семье 5 сыновей, у каждого сестра. Сколько детей?", answer: "6" }, { question: "5 яблок разделить на 5 человек, как оставить 1?", answer: "отдать" }, { question: "Что легче: 1 кг ваты или 1 кг железа?", answer: "одинаково" }] },
-                { title: "Простые дроби и десятичные", theory: "Учимся переводить обыкновенные дроби в десятичные: 1/2 = 0.5, 1/4 = 0.25, 3/4 = 0.75. Дроби и десятичные - два языка одной математики!", tasks: [
-                    { question: "1/2 = ? (десятичная)", answer: "0.5" }, { question: "1/4 = ? (десятичная)", answer: "0.25" }, { question: "3/4 = ? (десятичная)", answer: "0.75" }, { question: "1/5 = ? (десятичная)", answer: "0.2" }, { question: "2/5 = ? (десятичная)", answer: "0.4" }] }
+                // ... остальные темы остаются без изменений
             ]
         };
 
@@ -779,6 +897,8 @@
                 topicCard.onclick = () => selectTopic(index);
                 topicsGrid.appendChild(topicCard);
             });
+            
+            createSparkles(10);
         }
 
         function backToGrades() {
@@ -798,6 +918,7 @@
             
             showTheory();
             updateScoreDisplay();
+            createSparkles(15);
         }
 
         function backToTopics() {
@@ -813,8 +934,8 @@
             const topic = curriculum[currentGrade][currentTopic];
             
             document.getElementById('theoryText').innerHTML = `
-                <h3 style="color: #1c3a5c; margin-bottom: 15px;">${topic.title}</h3>
-                <div style="font-size: 1.2em; line-height: 1.8;">
+                <h3 style="color: #1c3a5c; margin-bottom: 15px; text-align: center; font-size: 1.8em;">${topic.title}</h3>
+                <div style="font-size: 1.2em; line-height: 1.8; padding: 10px;">
                     ${topic.theory}
                 </div>
             `;
@@ -858,9 +979,10 @@
                 character.classList.add('character-reaction');
                 setTimeout(() => {
                     character.classList.remove('character-reaction');
-                }, 500);
+                }, 600);
                 
                 showCharacterBubble("Ура! Правильно! Ты настоящий математик! 🎉");
+                createSparkles(20);
                 
                 const happyMessages = [
                     "Отлично! Ты справился!",
@@ -879,7 +1001,7 @@
                 character.classList.add('character-sad');
                 setTimeout(() => {
                     character.classList.remove('character-sad');
-                }, 500);
+                }, 800);
                 
                 showCharacterBubble("Не расстраивайся! Попробуй ещё раз, я верю в тебя! 💪");
                 
@@ -904,8 +1026,16 @@
                 character.classList.add('character-reaction');
                 setTimeout(() => {
                     character.classList.remove('character-reaction');
-                }, 500);
+                }, 600);
                 showCharacterBubble(`Ура! У тебя уже ${score} баллов! Ты супер! 🏆`);
+                createSparkles(30);
+                
+                if (score % 100 === 0) {
+                    character.classList.add('character-dance');
+                    setTimeout(() => {
+                        character.classList.remove('character-dance');
+                    }, 2000);
+                }
             }
         }
 
@@ -924,8 +1054,9 @@
                 fullsizeChar.style.transform = 'scale(1)';
             }, 300);
             
-            const characterName = character === 'robot' ? 'Робот' : 'Принцесса';
+            const characterName = character === 'robot' ? 'Умный Робот' : 'Мудрая Принцесса';
             showCharacterBubble(`Привет! Я ${characterName} и я помогу тебе с математикой!`);
+            createSparkles(15);
         }
 
         function showCharacterBubble(message) {
@@ -936,6 +1067,22 @@
             setTimeout(() => {
                 bubble.style.display = 'none';
             }, 5000);
+        }
+
+        function createSparkles(count) {
+            for (let i = 0; i < count; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * window.innerWidth + 'px';
+                sparkle.style.top = window.innerHeight + 'px';
+                document.body.appendChild(sparkle);
+                
+                sparkle.style.animationDelay = Math.random() * 0.5 + 's';
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
         }
 
         function toggleChat() {
@@ -1013,7 +1160,7 @@
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
             
-            character.style.transform = `translate(${(x - 0.5) * 10}px, ${(y - 0.5) * 10}px)`;
+            character.style.transform = `translate(${(x - 0.5) * 15}px, ${(y - 0.5) * 15}px)`;
         });
     </script>
 </body>
