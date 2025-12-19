@@ -89,8 +89,9 @@
             filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
         }
 
+        /* НОВЫЙ РОБОТ - УМНЫЙ ДРУЖЕЛЮБНЫЙ РОБОТ-УЧИТЕЛЬ */
         .robot-model {
-            background-image: url('https://cdn-icons-png.flaticon.com/512/2583/2583915.png');
+            background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712035.png');
         }
 
         .princess-model {
@@ -758,22 +759,6 @@
                 width: 100%;
             }
         }
-
-        /* Дополнительные эффекты */
-        .sparkle {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, #ffd700 30%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: sparkleMove 1s ease-out forwards;
-        }
-
-        @keyframes sparkleMove {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-100px) scale(0); opacity: 0; }
-        }
     </style>
 </head>
 <body>
@@ -826,7 +811,7 @@
             <h2>Настройки</h2>
             <div class="character-selection">
                 <div class="character-option selected" onclick="selectCharacter('robot')">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2583/2583915.png" alt="Робот" class="character-img">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Робот" class="character-img">
                     <p>Умный Робот</p>
                 </div>
                 <div class="character-option" onclick="selectCharacter('princess')">
@@ -897,8 +882,6 @@
                 topicCard.onclick = () => selectTopic(index);
                 topicsGrid.appendChild(topicCard);
             });
-            
-            createSparkles(10);
         }
 
         function backToGrades() {
@@ -918,7 +901,6 @@
             
             showTheory();
             updateScoreDisplay();
-            createSparkles(15);
         }
 
         function backToTopics() {
@@ -982,7 +964,6 @@
                 }, 600);
                 
                 showCharacterBubble("Ура! Правильно! Ты настоящий математик! 🎉");
-                createSparkles(20);
                 
                 const happyMessages = [
                     "Отлично! Ты справился!",
@@ -1028,7 +1009,6 @@
                     character.classList.remove('character-reaction');
                 }, 600);
                 showCharacterBubble(`Ура! У тебя уже ${score} баллов! Ты супер! 🏆`);
-                createSparkles(30);
                 
                 if (score % 100 === 0) {
                     character.classList.add('character-dance');
@@ -1056,7 +1036,6 @@
             
             const characterName = character === 'robot' ? 'Умный Робот' : 'Мудрая Принцесса';
             showCharacterBubble(`Привет! Я ${characterName} и я помогу тебе с математикой!`);
-            createSparkles(15);
         }
 
         function showCharacterBubble(message) {
@@ -1067,22 +1046,6 @@
             setTimeout(() => {
                 bubble.style.display = 'none';
             }, 5000);
-        }
-
-        function createSparkles(count) {
-            for (let i = 0; i < count; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.style.left = Math.random() * window.innerWidth + 'px';
-                sparkle.style.top = window.innerHeight + 'px';
-                document.body.appendChild(sparkle);
-                
-                sparkle.style.animationDelay = Math.random() * 0.5 + 's';
-                
-                setTimeout(() => {
-                    sparkle.remove();
-                }, 1000);
-            }
         }
 
         function toggleChat() {
